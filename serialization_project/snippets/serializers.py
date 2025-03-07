@@ -23,3 +23,9 @@ class SnippetSerializer(serializers.Serializer):
         instance.save()
         return instance
         # return super().update(instance, validated_data)
+
+# model serializers
+class SnippetModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Snippet
+        fields = ['id', 'title', 'code', 'linenos', 'language', 'style']
